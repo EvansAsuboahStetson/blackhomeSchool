@@ -114,8 +114,8 @@ export default function Navbar() {
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              {linkie.map((link) => (
-                <RouteLink to={link.href}>
+              {linkie.map((link,index) => (
+                <RouteLink  key={index} to={link.href}>
                   <NavLink>{link.linkName}</NavLink>
                 </RouteLink>
               ))}

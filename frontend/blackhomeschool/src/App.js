@@ -7,29 +7,34 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import Footer from "./components/Footer/Footer";
 import JoinUs from "./Pages/JoinUs/JoinUs";
+import Payment from "./Pages/Payment/Payment";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import Gear from "./Pages/Gear/Gear";
+import Blog from "./Pages/Blog/Blog";
 
 function App() {
   return (
-     <BrowserRouter>
-       <ChakraProvider theme={theme}>
-      <div className="App">
+    <BrowserRouter>
+      <ChakraProvider theme={theme}>
+        <PayPalScriptProvider
+          options={{ "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID }}
+        >
+          <div className="App">
+            <Navbar />
 
-      <Navbar />
-     
-      <Routes>
-        <Route  path="/" element={<HomePage />}></Route>
-        <Route path="/aboutUs" element={<AboutUs/>}></Route>
-         <Route path="/joinUs" element={<JoinUs/>}></Route>
-      </Routes>
-      <Footer/>
-    </div>
-  
-
-  </ChakraProvider>
-     
-     </BrowserRouter>
-
-  
+            <Routes>
+              <Route path="/" element={<HomePage />}></Route>
+              <Route path="/aboutUs" element={<AboutUs />}></Route>
+              <Route path="/joinUs" element={<JoinUs />}></Route>
+              <Route path="/payments" element={<Payment />}></Route>
+              <Route path="/gear" element={<Gear />}></Route>
+              <Route path="/blog" element={<Blog />}></Route>
+            </Routes>
+            <Footer />
+          </div>
+        </PayPalScriptProvider>
+      </ChakraProvider>
+    </BrowserRouter>
   );
 }
 

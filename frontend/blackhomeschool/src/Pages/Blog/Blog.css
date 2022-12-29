@@ -3,3 +3,35 @@
 .text-blog{
     font-family: 'Manrope', sans-serif;
 }
+
+div.a {
+    position: relative;
+    width: 400px;
+    height: 50px;
+
+  }
+  
+  div.b {
+    position: absolute;
+    left: auto;
+    width: 150px;
+    height: 50px;
+
+  } 
+  
+  div.c {
+    position: absolute;
+    left: 150px;
+    width: 200px;
+    height: 50px;
+
+  } 
+  .arrange-footer{
+    display: flex;
+    flex-direction: column;
+
+    left: auto;
+    width: 150px;
+    height: 50px;
+    color: green;
+  }

@@ -19,7 +19,7 @@ function Blog() {
       imagesrc: bhcl,
       mainText:
         "Every year, more families are moving towards homeschooling their children. Surveys show that there are an estimated 2.5 million homeschooled children in the United States alone. Globally, homeschooling is experiencing a steady growth rate of up to 8% every year.",
-      datePublished: "February 13, 2021",
+      datePublished: "January 14, 2022",
       category: "Interviews",
       link: "",
     },
@@ -29,7 +29,7 @@ function Blog() {
       imagesrc: reading,
       mainText:
         "The focus of our last quarter has been working with local groups to improve bus networks. We believe that it is vital to provide transportation options for children living in rural areas. Thanks to our donors we were able to fund 50 buses and 200 cars that transport children to schools all around the globe.",
-      datePublished: "February 13, 2021",
+      datePublished: "March 14, 2022",
       category: "Community Update",
       link: "",
     },
@@ -51,7 +51,7 @@ function Blog() {
         <Hero url={ballet} name={"BLOGS"} />
         <Services />
       </div>
-      <Heading margin={10} className="text-blog">LATEST BLOG POST</Heading>
+      <Heading  className="text-blog">LATEST BLOG POST</Heading>
       <SimpleGrid
         margin={10}
         spacing={4}

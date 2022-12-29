@@ -11,6 +11,7 @@ import Payment from "./Pages/Payment/Payment";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import Gear from "./Pages/Gear/Gear";
 import Blog from "./Pages/Blog/Blog";
+import SingleBlog from "./Pages/Blog/SingleBlog";
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
               <Route path="/payments" element={<Payment />}></Route>
               <Route path="/gear" element={<Gear />}></Route>
               <Route path="/blog" element={<Blog />}></Route>
+              <Route path="/bhcl_blog" element={<SingleBlog />}></Route>
+              
             </Routes>
             <Footer />
           </div>

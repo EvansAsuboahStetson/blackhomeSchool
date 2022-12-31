@@ -1,4 +1,10 @@
-import { Box, useRadio, useRadioGroup, HStack } from "@chakra-ui/react";
+import {
+  Box,
+  useRadio,
+  useRadioGroup,
+  HStack,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 function RadioCard(props) {
@@ -34,14 +40,12 @@ function RadioCard(props) {
 }
 
 // Step 2: Use the `useRadioGroup` hook to control a group of custom radios.
-export default function CustomRadioButtons({Size,setSize}) {
-
+export default function CustomRadioButtons({ Size, setSize }) {
   const options = ["Sm", "M", "L", "XL"];
 
   const handleChange = (value) => {
-    setSize(value)
+    setSize(value);
     console.log(value, "valueChange");
-   
   };
 
   const { getRootProps, getRadioProps } = useRadioGroup({
@@ -57,9 +61,13 @@ export default function CustomRadioButtons({Size,setSize}) {
       {options.map((value) => {
         const radio = getRadioProps({ value });
         return (
-          <RadioCard key={value} {...radio}>
-            {value}
-          </RadioCard>
+          <div>
+            <SimpleGrid templateColumns="repeat(auto-fill, minmax(50px, 2fr))">
+              <RadioCard key={value} {...radio}>
+                {value}
+              </RadioCard>
+            </SimpleGrid>
+          </div>
         );
       })}
     </HStack>

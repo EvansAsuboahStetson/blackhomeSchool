@@ -9,9 +9,11 @@ import {
   Text,
   Stack,
   Divider,
+
 } from "@chakra-ui/react";
 import PaypalCheckoutButton from "./PaypalCheckoutButton";
 import CustomRadioButtons from "./CustomButtons";
+import Menu from "./Menu";
 
 
 
@@ -38,7 +40,8 @@ function Product({ product }) {
               ${product.price}
 
             </Text>
-            <CustomRadioButtons   product={product} Size={Size} setSize={setSize}/>
+            {/* <CustomRadioButtons   product={product} Size={Size} setSize={setSize}/> */}
+            <Menu Size={Size} setSize={setSize}/>
 
           </Stack>
         </CardBody>

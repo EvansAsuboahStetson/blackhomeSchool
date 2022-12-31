@@ -61,10 +61,6 @@ const linkie = [
     linkName: "Donate",
     href: "/donate",
   },
-  {
-    linkName: "Buy Here",
-    href: "/buyHere",
-  },
 ];
 
 const NavLink = ({ children }) => (

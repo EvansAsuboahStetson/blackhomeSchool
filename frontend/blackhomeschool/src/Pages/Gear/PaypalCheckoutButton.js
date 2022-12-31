@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { PayPalButtons } from "@paypal/react-paypal-js";
+import "./checkout.css"
 
 const PaypalCheckoutButton = (props) => {
   var { product, Size } = props;
@@ -46,57 +47,59 @@ const PaypalCheckoutButton = (props) => {
   }
 
   return (
-    <PayPalButtons
-      style={{
-        color: "silver",
-        layout: "horizontal",
-        height: 48,
-        tagline: false,
-        shape: "pill",
-      }}
-      onClick={(data, actions) => {
-        // Validate on button click, client or server side
-        const hasAlreadyBoughtCourse = false;
+    <div className="zindex">
+      <PayPalButtons
+        style={{
+          color: "silver",
+          layout: "horizontal",
+          height: 48,
+          tagline: false,
+          shape: "pill",
+        }}
+        onClick={(data, actions) => {
+          // Validate on button click, client or server side
+          const hasAlreadyBoughtCourse = false;
 
-        if (hasAlreadyBoughtCourse) {
-          setError(
-            "You already bought this course. Go to your account to view your list of courses."
-          );
+          if (hasAlreadyBoughtCourse) {
+            setError(
+              "You already bought this course. Go to your account to view your list of courses."
+            );
 
-          return actions.reject();
-        } else {
-          return actions.resolve();
-        }
-      }}
-      createOrder={(data, actions) => {
-        console.log(productNew.size);
-        // console.log(Size,"SOZE")
-        return actions.order.create({
-          purchase_units: [
-            {
-              description: product.title + " Size: " + productNew.size,
-              amount: {
-                value: product.price,
+            return actions.reject();
+          } else {
+            return actions.resolve();
+          }
+        }}
+        createOrder={(data, actions) => {
+          console.log(productNew.size);
+          // console.log(Size,"SOZE")
+          return actions.order.create({
+            purchase_units: [
+              {
+                description: product.title + " Size: " + productNew.size,
+                amount: {
+                  value: product.price,
+                },
+                size: productNew.size,
               },
-              size: productNew.size,
-            },
-          ],
-        });
-      }}
-      onApprove={async (data, actions) => {
-        const order = await actions.order.capture();
-        console.log("order", order);
+            ],
+          });
+        }}
+        onApprove={async (data, actions) => {
+          const order = await actions.order.capture();
+          console.log("order", order);
 
-        handleApprove(data.orderID);
-      }}
-      onCancel={() => {
-        // Display cancel message, modal or redirect user to cancel page or back to cart
-      }}
-      onError={(err) => {
-        setError(err);
-        console.error("PayPal Checkout onError", err);
-      }}
-    />
+          handleApprove(data.orderID);
+        }}
+        onCancel={() => {
+          // Display cancel message, modal or redirect user to cancel page or back to cart
+        }}
+        onError={(err) => {
+          setError(err);
+          console.error("PayPal Checkout onError", err);
+        }}
+      />
+    </div>
   );
 };
 

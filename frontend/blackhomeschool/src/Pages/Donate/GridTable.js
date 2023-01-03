@@ -25,7 +25,7 @@ function GridTable() {
           base: "repeat(1, 1fr)",
           sm: "repeat(1, 1fr)",
           lg: "repeat(2, 1fr)",
-          md: "repeat(2, 1fr)",
+          md: "repeat(1, 1fr)",
         }}
       >
         <Card className="card-container" bg="blue">

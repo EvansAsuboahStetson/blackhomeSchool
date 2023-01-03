@@ -4,6 +4,9 @@
 .text{
     font-family: 'Manrope', sans-serif;
 }
+.marg{
+    margin: 60px;
+}
 .right-side{
 
  margin-right: 60px;

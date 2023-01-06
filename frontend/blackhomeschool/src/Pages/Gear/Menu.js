@@ -4,7 +4,7 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import "./checkout.css"
 
 export default function MenuIcon({setSize}) {
-  const [selected, setSelected] = useState("Actions");
+  const [selected, setSelected] = useState("Size");
 
   function handleSubmit(items) {
    setSelected(items)

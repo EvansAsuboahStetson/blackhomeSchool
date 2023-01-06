@@ -1,0 +1,14 @@
+.box{
+  
+}
+
+.boxyContainer{
+  padding: 15px;
+   
+   
+}
+
+.boxTitle{
+    display: flex;
+    justify-content: space-between;
+}

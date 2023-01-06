@@ -2,13 +2,43 @@ import {
   Grid,
   GridItem,
   useColorModeValue,
+  Divider,
+  Box,
+  Icon,
 } from "@chakra-ui/react";
 import React from "react";
 
 import "./Donate.css";
-import { Heading, Text, Stack, Button } from "@chakra-ui/react";
+import {
+  Heading,
+  Text,
+  Stack,
+  Button,
+  ListIcon,
+  ListItem,
+  List,
+} from "@chakra-ui/react";
 import GridTable from "./GridTable";
+import SCholarForms from "./ScholarshipForm";
+import ShowHide from "./ShowHide";
+import { AiOutlineDown } from "react-icons/ai";
+import { MdSettings, MdCheckCircle } from "react-icons/md";
 
+const ListFeature = ({ needs }) => {
+  return (
+    <div>
+      {" "}
+      {needs.map((need, index) => (
+        <List spacing={3}>
+          <ListItem>
+            <ListIcon as={MdCheckCircle} color="green.500" />
+            {need}
+          </ListItem>
+        </List>
+      ))}
+    </div>
+  );
+};
 
 function ImpactPage() {
   let bgButton = useColorModeValue(
@@ -33,61 +63,116 @@ function ImpactPage() {
       >
         <GridItem>
           <div className="leftSide">
-            <Stack
-              align={"center"}
-              spacing={{ base: 8, md: 10 }}
-              py={{ base: 20, md: 28 }}
-              direction={{ base: "column", md: "row" }}
-            >
-              <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-                <Heading
-                  className="text"
-                  lineHeight={1.1}
-                  fontWeight={100}
-                  fontSize={{ base: "3xl", sm: "3xl", lg: "3xl" }}
-                >
-                  <Text className="text" as={"span"} color={"black.400"}>
-                    No contribution is too small
-                  </Text>
-                  <br />
-                
-                  
-
-                  <br />
-                  <a
+            <div className="info-stack">
+              <Stack
+                align={"center"}
+                spacing={{ base: 8, md: 10 }}
+                py={{ base: 20, md: 18 }}
+                direction={{ base: "column", md: "row" }}
+              >
+                <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+                  <Heading
                     className="text"
-                    href={process.env.REACT_APP_PAYPAL_DONATE_ID}
+                    lineHeight={1.1}
+                    fontWeight={100}
+                    fontSize={{ base: "3xl", sm: "3xl", lg: "3xl" }}
                   >
-                    <Button
-                      _hover={{ boxShadow: "none" }}
-                      bg={bgButton}
-                      color={colorButton}
-                      fontSize="sm"
-                      borderRadius="14px"
-                      px="30px"
-                      _active="none"
-                      size="lg"
+                    <Text className="text" as={"span"} color={"black.400"}>
+                      No contribution is too small
+                    </Text>
+                    <br />
+
+                    <br />
+                    <a
+                      className="text"
+                      href={process.env.REACT_APP_PAYPAL_DONATE_ID}
                     >
-                      Donate Now
-                    </Button>
-                  </a>
-                </Heading>
+                      <Button
+                        _hover={{ boxShadow: "none" }}
+                        bg={bgButton}
+                        color={colorButton}
+                        fontSize="sm"
+                        borderRadius="14px"
+                        px="30px"
+                        _active="none"
+                        size="lg"
+                      >
+                        Donate Now
+                      </Button>
+                    </a>
+                  </Heading>
+                  <div className="scholarforms">
+                    <SCholarForms />
+                  </div>
+                </Stack>
               </Stack>
-            </Stack>
+            </div>
+
+            <div className="showSection">
+              <Box padding={4}>
+                <Divider
+                  borderColor={useColorModeValue("gray.100", "gray.700")}
+                  borderRadius="lg"
+                />
+                <span>
+                  {" "}
+                  <ShowHide
+                    title={"Hey Man"}
+                    children="Yo"
+                    icon={
+                      <Icon as={AiOutlineDown} color={"gray.500"} w={5} h={5} />
+                    }
+                    list={
+                      <ListFeature needs={["Color printer and ink","HP Printer Ink 952","Document Sheet protectors"," 8 1/2 x 11 white copy paper","Postage Stamps & Envelopes"]}/>
+                    }
+                  />
+                </span>
+                <Divider
+                  borderColor={useColorModeValue("gray.100", "gray.700")}
+                  borderRadius="lg"
+                />
+                <ShowHide
+                  title={"Hey Bro"}
+                  children="Sap"
+                  icon={
+                    <Icon as={AiOutlineDown} color={"gray.500"} w={5} h={5} />
+                  }
+                  list={
+                    <ListFeature needs={["Color printer and ink","HP Printer Ink 952","Document Sheet protectors"," 8 1/2 x 11 white copy paper","Postage Stamps & Envelopes"]}/>
+                  }
+                />
+                <Divider
+                  borderColor={useColorModeValue("gray.100", "gray.700")}
+                  borderRadius="lg"
+                />
+                <ShowHide
+                  title={"Good Man"}
+                  children="You and You"
+                  icon={
+                    <Icon as={AiOutlineDown} color={"gray.500"} w={5} h={5} />
+                  }
+                  list={
+                    <ListFeature needs={["Color printer and ink","HP Printer Ink 952","Document Sheet protectors"," 8 1/2 x 11 white copy paper","Postage Stamps & Envelopes"]}/>
+                  }
+                />
+                <Divider
+                  borderColor={useColorModeValue("gray.100", "gray.700")}
+                  borderRadius="lg"
+                />
+              </Box>
+            </div>
           </div>
         </GridItem>
         <div className="right-side">
-        <GridItem>
-            <Heading><Text className="text">Impact of Your Donation</Text></Heading>
+          <GridItem>
+            <Heading>
+              <Text className="text">Impact of Your Donation</Text>
+            </Heading>
             <div>
-            <GridTable/>
+              <GridTable />
             </div>
-           
-        </GridItem>
-
+          </GridItem>
         </div>
-
-      
       </Grid>
     </div>
   );

@@ -1,6 +1,3 @@
-.box{
-  
-}
 
 .boxyContainer{
   padding: 15px;
@@ -11,4 +8,14 @@
 .boxTitle{
     display: flex;
     justify-content: space-between;
+}
+.boxContent{
+  background-color: white;
+  width: 100%;
+  margin: 10px;
+  height: 100%;
+}
+.title{
+  font-size: 20px;
+  cursor: pointer;
 }

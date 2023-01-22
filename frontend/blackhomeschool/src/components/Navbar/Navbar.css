@@ -1,5 +1,15 @@
-.boxy{
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.boxy {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo-image {
+  width: 300px;
+  height: 120px;
+  margin-top: 40px;
+  overflow: hidden;
+}
+.bhcl-logo{
+    display: flex;
+    flex-direction: column;
 }

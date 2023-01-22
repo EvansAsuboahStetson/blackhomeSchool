@@ -1,12 +1,14 @@
 import { ReactNode } from "react";
 import "./Navbar.css";
 import { Link as RouteLink } from "react-router-dom";
+import OrigLogo from "../assets/OrigLogo.png";
 
 import {
   Box,
   Text,
   Flex,
   Avatar,
+  Image,
   HStack,
   IconButton,
   Button,
@@ -69,6 +71,8 @@ const NavLink = ({ children }) => (
     px={2}
     py={1}
     rounded={"md"}
+    color="white"
+    fontSize="larger"
     _hover={{
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
@@ -84,7 +88,7 @@ export default function Navbar() {
   return (
     <>
       <Box
-        bg={useColorModeValue(useColorModeValue("rgb(255, 244, 242)"))}
+        bg={useColorModeValue(useColorModeValue("rgb(255,102,0)"))}
         px={16}
         className="boxy"
       >
@@ -96,22 +100,25 @@ export default function Navbar() {
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={"center"}>
-            <Box>
-              <Avatar
-                size={"m"}
-                src={
-                  "https://www.hcc-offm.org/wp-content/uploads/2019/02/hope_logo_b_w_regular.png"
-                }
-              />
-            </Box>
+
+          <HStack spacing={5} alignItems={"center"}>
+            <div className="bhcl-logo">
+              <Box>
+                <Image
+                  className="logo-image"
+                  objectFit="cover"
+                  src={OrigLogo}
+                />
+              </Box>
+            </div>
+
             <HStack
               as={"nav"}
-              spacing={4}
+              spacing={8}
               display={{ base: "none", md: "flex" }}
             >
-              {linkie.map((link,index) => (
-                <RouteLink  key={index} to={link.href}>
+              {linkie.map((link, index) => (
+                <RouteLink key={index} to={link.href}>
                   <NavLink>{link.linkName}</NavLink>
                 </RouteLink>
               ))}
@@ -134,12 +141,12 @@ export default function Navbar() {
                 cursor={"pointer"}
                 minW={0}
               ></MenuButton>
-              <MenuList>
+              {/* <MenuList>
                 <MenuItem>Link 1</MenuItem>
                 <MenuItem>Link 2</MenuItem>
                 <MenuDivider />
                 <MenuItem>Link 3</MenuItem>
-              </MenuList>
+              </MenuList> */}
             </Menu>
           </Flex>
         </Flex>

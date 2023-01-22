@@ -13,10 +13,18 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import "./ShowHide.css";
-import { AiOutlineDown } from "react-icons/ai";
+import { AiOutlineUp } from "react-icons/ai";
 
-export default function ShowHide({ title, children, iconBg, icon,list }) {
+export default function ShowHide({
+  title,
+  children,
+  iconBg,
+  icon,
+  list,
+  components,
+}) {
   const [isOpened, setIsOpened] = useState(false);
+  console.log(components);
 
   function toggle() {
     setIsOpened((wasOpened) => !wasOpened);
@@ -25,22 +33,17 @@ export default function ShowHide({ title, children, iconBg, icon,list }) {
   return (
     <div className="box">
       <div className="boxyContainer">
-        <div className="boxTitle text" onClick={toggle}>
-          <div className="text">{title}</div>
+        <div className="boxTitle" onClick={toggle}>
+          <div className="text title">{title}</div>
           <div>
-            <Flex
-              w={8}
-              h={8}
-              align={"center"}
-              justify={"center"}
-              rounded={"full"}
-              bg={iconBg}
-            >
-              {icon}
-            </Flex>
+            {isOpened ? (
+              icon
+            ) : (
+              <Icon as={AiOutlineUp} color={"gray.500"} w={5} h={5} />
+            )}
           </div>
         </div>
-        {isOpened && <div className="boxContent text">{list}</div>}
+        {isOpened && <div className="boxContent text">{components}</div>}
       </div>
     </div>
   );

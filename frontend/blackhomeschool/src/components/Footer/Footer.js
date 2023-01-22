@@ -14,6 +14,10 @@ import {
 import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 import '../../Pages/HomeInfo/HomeInfo.css';
 
+import OrigLogo from "../assets/OrigLogo.png";
+
+
+
 
 
 
@@ -61,39 +65,39 @@ export default function Footer() {
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={'flex-start'}>
             <ListHeader>Organization</ListHeader>
-            <Link  className="text" href={'#'}>About Us</Link>
-            <Link  className="text" href={'#'}>Blog</Link>
-            <Link   className="text" href={'#'}>Contact Us</Link>
+            <Link className="text" href={'#'}>About Us</Link>
+            <Link className="text" href={'#'}>Blog</Link>
+            <Link className="text" href={'#'}>Contact Us</Link>
           </Stack>
 
           <Stack align={'flex-start'}>
             <ListHeader>Support</ListHeader>
-            <Link  className="text" href={'#'}>Donate</Link>
-            <Link  className="text" href={'#'}>Buy From Here</Link>
-            <Link  className="text" href={'#'}>PayPal</Link>
+            <Link className="text" href={'#'}>Donate</Link>
+            <Link className="text" href={'#'}>Buy From Here</Link>
+            <Link className="text" href={'#'}>PayPal</Link>
           </Stack>
 
           <Stack align={'flex-start'} >
             <ListHeader className="text">Legal</ListHeader>
-            <Link  className="text"  href={'#'}>Cookies Policy</Link>
-            <Link  className="text" href={'#'}>Privacy Policy</Link>
-            <Link  className="text" href={'#'}>Terms of Service</Link>
-            <Link  className="text" href={'#'}>Law Enforcement</Link>
+            <Link className="text" href={'#'}>Cookies Policy</Link>
+            <Link className="text" href={'#'}>Privacy Policy</Link>
+            <Link className="text" href={'#'}>Terms of Se rvice</Link>
+            <Link className="text" href={'#'}>Law Enforcement</Link>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Black Home Schoolers Of Central Florida</ListHeader>
             <Box>
-            <Avatar
-                  size={'m'}
-                  src={
-                    'https://www.hcc-offm.org/wp-content/uploads/2019/02/hope_logo_b_w_regular.png'
-                  }
-                />
+              <Avatar
+                size={'m'}
+                src={
+                  OrigLogo
+                }
+              />
             </Box>
-          
+
           </Stack>
 
-        
+
         </SimpleGrid>
       </Container>
 

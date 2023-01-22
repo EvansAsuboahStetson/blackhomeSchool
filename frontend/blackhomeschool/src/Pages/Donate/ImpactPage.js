@@ -5,8 +5,9 @@ import {
   Divider,
   Box,
   Icon,
+  Image,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 
 import "./Donate.css";
 import {
@@ -24,6 +25,8 @@ import ShowHide from "./ShowHide";
 import { AiOutlineDown } from "react-icons/ai";
 import { MdSettings, MdCheckCircle } from "react-icons/md";
 
+import Plat from "../../images/Plat.png";
+
 const ListFeature = ({ needs }) => {
   return (
     <div>
@@ -32,10 +35,30 @@ const ListFeature = ({ needs }) => {
         <List spacing={3}>
           <ListItem>
             <ListIcon as={MdCheckCircle} color="green.500" />
-            {need}
+            <div className="text">{need}</div>
           </ListItem>
         </List>
       ))}
+    </div>
+  );
+};
+
+const Componentials = ({ components, logo, needs, text }) => {
+  return (
+    <div className="components">
+      <div className="comp-image">
+        <Box boxSize="sm">
+          <Image src={logo} alt="Dan Abramov" />
+        </Box>
+      </div>
+      <div className="comp-text">
+        <Text className="comp-title text">{text}</Text>
+
+        <Text className="dtitle text">
+          Sponsorship at this level includes the following:
+        </Text>
+        <ListFeature needs={needs} />
+      </div>
     </div>
   );
 };
@@ -47,6 +70,8 @@ function ImpactPage() {
   );
   let navbarPosition = "fixed";
   let colorButton = "white";
+
+  const [iconValue, setIconValue] = useState(AiOutlineDown);
 
   console.log(process.env.REACT_APP_PAYPAL_DONATE_ID);
   return (
@@ -108,37 +133,31 @@ function ImpactPage() {
               </Stack>
             </div>
 
-            <div className="showSection">
-              <Box padding={4}>
+            <div>
+              <Box padding={2}>
                 <Divider
                   borderColor={useColorModeValue("gray.100", "gray.700")}
                   borderRadius="lg"
-                />
-                <span>
-                  {" "}
-                  <ShowHide
-                    title={"Hey Man"}
-                    children="Yo"
-                    icon={
-                      <Icon as={AiOutlineDown} color={"gray.500"} w={5} h={5} />
-                    }
-                    list={
-                      <ListFeature needs={["Color printer and ink","HP Printer Ink 952","Document Sheet protectors"," 8 1/2 x 11 white copy paper","Postage Stamps & Envelopes"]}/>
-                    }
-                  />
-                </span>
-                <Divider
-                  borderColor={useColorModeValue("gray.100", "gray.700")}
-                  borderRadius="lg"
-                />
+                />{" "}
                 <ShowHide
-                  title={"Hey Bro"}
-                  children="Sap"
+                  title={"Platinum - $1000"}
                   icon={
                     <Icon as={AiOutlineDown} color={"gray.500"} w={5} h={5} />
                   }
-                  list={
-                    <ListFeature needs={["Color printer and ink","HP Printer Ink 952","Document Sheet protectors"," 8 1/2 x 11 white copy paper","Postage Stamps & Envelopes"]}/>
+                  components={
+                    <Componentials
+                      text="Sponsoring at this level is serious business and shows you wish to build a relationship with us as we continue to move forward in achieving our goals.
+
+                    Reach the community with this all-inclusive package –vendor space; advertising through print, web, grab bags, social media, AND the opportunity to speak directly to your community!"
+                      needs={[
+                        "Vendor Space at the Event to include 1 table and 2 chairs in our Platinum Reserved Area (lobby/FIRST Seen)",
+                        "HP Printer Ink 952",
+                        "FULL Page ad for you or your business in our 2024 Journal",
+                        "Inclusion of up to three paper items in our Grab Bags (Business/Rack cards, flyers, coupons, brochures, etc.) and a promotional item with your business logo/information (pen, bracelet, balloon, wipes, etc.)",
+                        "Mention during event and inclusion in the video presentation",
+                      ]}
+                      logo={Plat}
+                    />
                   }
                 />
                 <Divider
@@ -146,18 +165,77 @@ function ImpactPage() {
                   borderRadius="lg"
                 />
                 <ShowHide
-                  title={"Good Man"}
-                  children="You and You"
+                  title={"Gold- $750"}
                   icon={
                     <Icon as={AiOutlineDown} color={"gray.500"} w={5} h={5} />
                   }
-                  list={
-                    <ListFeature needs={["Color printer and ink","HP Printer Ink 952","Document Sheet protectors"," 8 1/2 x 11 white copy paper","Postage Stamps & Envelopes"]}/>
+                  components={
+                    <Componentials
+                      text="At this sponsorship level you are truly partnering with us to forward our Mission and we are so grateful! Reach the community with this all-inclusive package – vendor space; advertising through print, web, grab bags, social media, AND the opportunity to speak directly to your community!
+
+                      "
+                      needs={[
+                        "Vendor Space at the Event to include 1 table and 2 chairs in our Platinum Reserved Area (lobby/FIRST Seen)",
+                        "Half Page ad for you or your business in our 2024 Journal",
+                        "Inclusion of up to three paper items in our Grab Bags (Business/Rack cards, flyers, coupons, brochures, etc.",
+                        "Mention during event and inclusion in the video presentation",
+                        "Inclusion of your logo and promotion of your business on our website as a sponsor",
+                        "Quarterly promotion/advertising of you or your business as a partner via our social media sites",
+                        "20 Minute Spotlight presentation during event in the main hall",
+                      ]}
+                      logo="https://mediaprocessor.websimages.com/width/358/crop/0,0,358x293/www.blackhomeschoolerscfl.com/gold.gif"
+                    />
                   }
                 />
                 <Divider
                   borderColor={useColorModeValue("gray.100", "gray.700")}
                   borderRadius="lg"
+                />
+                <ShowHide
+                  title={"Silver- $500"}
+                  icon={
+                    <Icon as={AiOutlineDown} color={"gray.500"} w={5} h={5} />
+                  }
+                  components={
+                    <Componentials
+                      needs={[
+                        " Vendor Space at the Event to include 1 table and 2 chairs in our Silver Reserved Area",
+                        "Quarter Page ad for you or your business in our 2024 Journal",
+                        "Inclusion of a business or rack card and a brochure or Flyer in our Grab Bags",
+                        "Mention during event and inclusion in the video presentation",
+                        "Inclusion/Promotion of your business on our website as a sponsor",
+                        "10 Minute Spotlight presentation during event in the main hall"
+                      ]}
+                      text="Get more! Reach the community with this all-inclusive package – vendor space;
+                      advertising through print, web and grab bags, AND the opportunity to speak directly to our community!"
+                      logo="https://mediaprocessor.websimages.com/width/398/crop/0,0,398x314/www.blackhomeschoolerscfl.com/bronze.png"
+
+                    />
+                  }
+                />
+                <Divider
+                  borderColor={useColorModeValue("gray.100", "gray.700")}
+                  borderRadius="lg"
+                />
+                      <ShowHide
+                  title={"Bronze- $400"}
+                  icon={
+                    <Icon as={AiOutlineDown} color={"gray.500"} w={5} h={5} />
+                  }
+                  components={
+                    <Componentials
+                      needs={[
+                        "Vendor Space at the event to include 1 table and 2 chairs In our Bronze Reserve Area",
+                        "Business Card size ad for you or your business in our 2024 Journal",
+                        " Inclusion of your Business Card in our Grab Bags",
+                        "Mention during event and inclusion in the video presentation",
+                        "Inclusion/Promotion of your business on our website as a sponsor",
+                      ]}
+                      text="Want to bring your business to Community EXPO? Consider an all-inclusive package through our Bronze sponsorship package and receive a discounted price!"
+                      logo="https://mediaprocessor.websimages.com/width/398/crop/0,0,398x314/www.blackhomeschoolerscfl.com/bronze.png"
+                      
+                    />
+                  }
                 />
               </Box>
             </div>

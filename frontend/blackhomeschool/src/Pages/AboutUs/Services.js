@@ -22,8 +22,35 @@ import {
   faBasketShopping,
   faHandshake,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link as RouteLink } from "react-router-dom";
 
-function Services() {
+const ServicesFeature = ({ title, location, icon }) => {
+  return (
+    <GridItem w="100%" h="80" bg="green.500">
+      <Center h="100%" w="100%" color="white" className="center">
+        <FontAwesomeIcon icon={icon} className="handsUp" />
+
+        <RouteLink to={`/${location}`}>
+          <Heading margin="20px" className="text">
+            {title}
+          </Heading>
+        </RouteLink>
+      </Center>
+    </GridItem>
+  );
+};
+
+function Services({
+  number1,
+  number2,
+  number3,
+  location1,
+  location2,
+  location3,
+  icon1,
+  icon2,
+  icon3
+}) {
   return (
     <div className="about_us">
       <Grid
@@ -35,30 +62,17 @@ function Services() {
         }}
         gap={0}
       >
-        <GridItem w="100%" h="80" bg="blue.500">
+        {/* <GridItem w="100%" h="80" bg="blue.500">
           <Center h="100%" w="100%" color="white" className="center">
             <FontAwesomeIcon icon={faHandsHolding} className="handsUp" />
             <Heading margin="20px" className="text">
-              BE A VOLUNTEER
+             {number1}
             </Heading>
           </Center>
-        </GridItem>
-        <GridItem w="100%" h="80" bg="gray.500">
-          <Center h="100%" w="100%" color="white" className="center">
-            <FontAwesomeIcon icon={faAward} className="handsUp" />
-            <Heading margin="20px" className="text">
-              BE A DONOR
-            </Heading>
-          </Center>
-        </GridItem>
-        <GridItem w="100%" h="80" bg="green.500">
-          <Center h="100%" w="100%" color="white" className="center">
-            <FontAwesomeIcon icon={faHandshake} className="handsUp" />
-            <Heading margin="20px" className="text">
-              BE A MEMBER
-            </Heading>
-          </Center>
-        </GridItem>
+        </GridItem> */}
+        <ServicesFeature title={number1} location={location1} icon={icon1} />
+        <ServicesFeature title={number2} location={location2} icon={icon2} />
+        <ServicesFeature title={number3} location={location3} icon={icon3} />
       </Grid>
     </div>
   );

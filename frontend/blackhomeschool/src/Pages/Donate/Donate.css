@@ -11,14 +11,7 @@
   margin-top: 20px;
   background-color: #e6e6fa;
 }
-.showSection {
- 
 
-  left: auto;
-  width: auto;
-  height: 100%;
- 
-}
 .info-stack {
   background-color: #bfbfbf;
 }
@@ -47,4 +40,19 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+.components{
+  display: flex;
+  flex-direction: column;
+}
+.comp-image{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.dtitle{
+
+  margin: 20px;
+  font-size: larger;
+  font-weight: 900;
 }

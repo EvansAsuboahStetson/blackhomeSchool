@@ -19,18 +19,6 @@ export default function Commentary() {
     <Container maxW={"6xl"} py={12}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
-          {/* <Text
-              textTransform={'uppercase'}
-              color={'blue.400'}
-              fontWeight={600}
-              fontSize={'sm'}
-              bg={useColorModeValue('blue.50', 'blue.900')}
-              p={2}
-              alignSelf={'flex-start'}
-              rounded={'md'}>
-              Our Story
-            </Text> */}
-          {/* <Heading>A digital Product design agency</Heading> */}
           <Text className="text" color={"black.500"} fontSize={"lg"}>
             Black Homeschoolers of Central Florida, Inc. has been serving the
             Greater Central Florida homeschool community since 2009, providing
@@ -72,18 +60,6 @@ export default function Commentary() {
 
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
-          {/* <Text
-              textTransform={'uppercase'}
-              color={'blue.400'}
-              fontWeight={600}
-              fontSize={'sm'}
-              bg={useColorModeValue('blue.50', 'blue.900')}
-              p={2}
-              alignSelf={'flex-start'}
-              rounded={'md'}>
-              Our Story
-            </Text> */}
-          {/* <Heading>A digital Product design agency</Heading> */}
           <Text className="text" color={"black.500"} fontSize={"lg"}>
             Not only does Black Homeschoolers of Central Florida, Inc. provide
             for the youth, but also their families. There are programs like the
@@ -122,18 +98,7 @@ export default function Commentary() {
 
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
-          {/* <Text
-              textTransform={'uppercase'}
-              color={'blue.400'}
-              fontWeight={600}
-              fontSize={'sm'}
-              bg={useColorModeValue('blue.50', 'blue.900')}
-              p={2}
-              alignSelf={'flex-start'}
-              rounded={'md'}>
-              Our Story
-            </Text> */}
-          {/* <Heading>A digital Product design agency</Heading> */}
+         
           <Text className="text" color={"black.500"} fontSize={"lg"}>
             In order to join and be a member of Black Homeschoolers of Central
             Florida, Inc., receive the eNewsletter, and participate in

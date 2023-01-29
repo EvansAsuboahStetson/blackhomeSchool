@@ -1,0 +1,49 @@
+.groups{
+
+    display: flex;
+    flex-direction: row;
+
+
+
+}
+.single_group{
+    margin-right: 10px;
+    flex: 1;
+}
+.sA_Page{
+inline-size: 100%; 
+  overflow: hidden;
+  justify-content: flex-start;
+  text-align: left;
+ 
+}
+.flex-image{
+    display: flex;
+    flex-direction: column;
+  
+}
+
+
+.sendIt{
+    background-color: red;
+    width: 100%;
+}
+.sssd{
+    width: 100%;
+}
+.imgS{
+    margin-bottom: 20px;
+
+}
+
+.Silentcard {
+ 
+ 
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+    transition: all .3s ease-in-out;
+  }
+  
+  .Silentcard:hover {
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
+  }

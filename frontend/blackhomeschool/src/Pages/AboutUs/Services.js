@@ -23,10 +23,11 @@ import {
   faHandshake,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link as RouteLink } from "react-router-dom";
+import "./handsUp.css"
 
 const ServicesFeature = ({ title, location, icon }) => {
   return (
-    <GridItem w="100%" h="80" bg="green.500">
+    <GridItem w="100%" h="80"  className="gridService">
       <Center h="100%" w="100%" color="white" className="center">
         <FontAwesomeIcon icon={icon} className="handsUp" />
 

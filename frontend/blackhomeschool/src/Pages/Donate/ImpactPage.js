@@ -6,11 +6,6 @@ import {
   Box,
   Icon,
   Image,
-} from "@chakra-ui/react";
-import React, { useState } from "react";
-
-import "./Donate.css";
-import {
   Heading,
   Text,
   Stack,
@@ -19,11 +14,14 @@ import {
   ListItem,
   List,
 } from "@chakra-ui/react";
+import React from "react";
+
+import "./Donate.css";
 import GridTable from "./GridTable";
 import SCholarForms from "./ScholarshipForm";
 import ShowHide from "./ShowHide";
 import { AiOutlineDown } from "react-icons/ai";
-import { MdSettings, MdCheckCircle } from "react-icons/md";
+import { MdCheckCircle } from "react-icons/md";
 
 import Plat from "../../images/Plat.png";
 
@@ -32,7 +30,7 @@ const ListFeature = ({ needs }) => {
     <div>
       {" "}
       {needs.map((need, index) => (
-        <List spacing={3}>
+        <List spacing={2}>
           <ListItem>
             <ListIcon as={MdCheckCircle} color="green.500" />
             <div className="text">{need}</div>
@@ -43,20 +41,21 @@ const ListFeature = ({ needs }) => {
   );
 };
 
-const Componentials = ({ components, logo, needs, text }) => {
+const Componentials = ({ logo, needs, text }) => {
   return (
-    <div className="components">
-      <div className="comp-image">
-        <Box boxSize="sm">
-          <Image src={logo} alt="Dan Abramov" />
+    <div>
+      <div>
+        <Box>
+          <Image
+            src={logo}
+            alt="Dan Abramov"
+            className="flex justify-center items-center"
+          />
         </Box>
       </div>
-      <div className="comp-text">
-        <Text className="comp-title text">{text}</Text>
-
-        <Text className="dtitle text">
-          Sponsorship at this level includes the following:
-        </Text>
+      <div>
+        <Text className="text">{text}</Text>
+        <Text>Sponsorship at this level includes the following:</Text>
         <ListFeature needs={needs} />
       </div>
     </div>
@@ -68,19 +67,15 @@ function ImpactPage() {
     "linear-gradient(135deg, #868CFF 0%, #4318FF 100%)",
     "linear-gradient(135deg, #868CFF 0%, #4318FF 100%)"
   );
-  let navbarPosition = "fixed";
+
   let colorButton = "white";
-
-  const [iconValue, setIconValue] = useState(AiOutlineDown);
-
-  console.log(process.env.REACT_APP_PAYPAL_DONATE_ID);
   return (
-    <div>
+    <div className="sholarship-page">
       <Grid
         templateColumns={{
           base: "repeat(1, 1fr)",
           sm: "repeat(1, 1fr)",
-          lg: "repeat(2, 1fr)",
+          lg: "repeat(1, 1fr)",
           md: "repeat(2, 1fr)",
         }}
         gap={0}
@@ -92,7 +87,7 @@ function ImpactPage() {
               <Stack
                 align={"center"}
                 spacing={{ base: 8, md: 10 }}
-                py={{ base: 20, md: 18 }}
+                py={{ base: 10, md: 8 }}
                 direction={{ base: "column", md: "row" }}
               >
                 <Stack flex={1} spacing={{ base: 5, md: 10 }}>
@@ -100,7 +95,7 @@ function ImpactPage() {
                     className="text"
                     lineHeight={1.1}
                     fontWeight={100}
-                    fontSize={{ base: "3xl", sm: "3xl", lg: "3xl" }}
+                    fontSize={{ base: "2xl", sm: "2xl", lg: "3xl" }}
                   >
                     <Text className="text" as={"span"} color={"black.400"}>
                       No contribution is too small
@@ -134,7 +129,7 @@ function ImpactPage() {
             </div>
 
             <div>
-              <Box padding={2}>
+              <Box padding={2} className="SHide">
                 <Divider
                   borderColor={useColorModeValue("gray.100", "gray.700")}
                   borderRadius="lg"
@@ -147,7 +142,6 @@ function ImpactPage() {
                   components={
                     <Componentials
                       text="Sponsoring at this level is serious business and shows you wish to build a relationship with us as we continue to move forward in achieving our goals.
-
                     Reach the community with this all-inclusive package –vendor space; advertising through print, web, grab bags, social media, AND the opportunity to speak directly to your community!"
                       needs={[
                         "Vendor Space at the Event to include 1 table and 2 chairs in our Platinum Reserved Area (lobby/FIRST Seen)",
@@ -204,12 +198,11 @@ function ImpactPage() {
                         "Inclusion of a business or rack card and a brochure or Flyer in our Grab Bags",
                         "Mention during event and inclusion in the video presentation",
                         "Inclusion/Promotion of your business on our website as a sponsor",
-                        "10 Minute Spotlight presentation during event in the main hall"
+                        "10 Minute Spotlight presentation during event in the main hall",
                       ]}
                       text="Get more! Reach the community with this all-inclusive package – vendor space;
                       advertising through print, web and grab bags, AND the opportunity to speak directly to our community!"
                       logo="https://mediaprocessor.websimages.com/width/398/crop/0,0,398x314/www.blackhomeschoolerscfl.com/bronze.png"
-
                     />
                   }
                 />
@@ -217,7 +210,7 @@ function ImpactPage() {
                   borderColor={useColorModeValue("gray.100", "gray.700")}
                   borderRadius="lg"
                 />
-                      <ShowHide
+                <ShowHide
                   title={"Bronze- $400"}
                   icon={
                     <Icon as={AiOutlineDown} color={"gray.500"} w={5} h={5} />
@@ -233,7 +226,6 @@ function ImpactPage() {
                       ]}
                       text="Want to bring your business to Community EXPO? Consider an all-inclusive package through our Bronze sponsorship package and receive a discounted price!"
                       logo="https://mediaprocessor.websimages.com/width/398/crop/0,0,398x314/www.blackhomeschoolerscfl.com/bronze.png"
-                      
                     />
                   }
                 />

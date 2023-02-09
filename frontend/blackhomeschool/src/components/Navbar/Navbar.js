@@ -92,7 +92,7 @@ export default function Navbar() {
         px={16}
         className="boxy"
       >
-        <Flex h={28} alignItems={"center"} justifyContent={"space-between"}>
+        <Flex h={28} alignItems={"center"} justifyContent={"space-between"} marginRight={'10px'}>
           <IconButton
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -125,14 +125,7 @@ export default function Navbar() {
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
-            {/* <Button
-              variant={'solid'}
-              colorScheme={'teal'}
-              size={'sm'}
-              mr={4}
-              leftIcon={<AddIcon />}>
-              Action
-            </Button> */}
+  
             <Menu>
               <MenuButton
                 as={Button}
@@ -141,12 +134,7 @@ export default function Navbar() {
                 cursor={"pointer"}
                 minW={0}
               ></MenuButton>
-              {/* <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
-              </MenuList> */}
+         
             </Menu>
           </Flex>
         </Flex>
@@ -154,8 +142,10 @@ export default function Navbar() {
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
-              {Links.map((link) => (
-                <NavLink>{link}</NavLink>
+         {linkie.map((link, index) => (
+                <RouteLink key={index} to={link.href}>
+                  <NavLink>{link.linkName}</NavLink>
+                </RouteLink>
               ))}
             </Stack>
           </Box>

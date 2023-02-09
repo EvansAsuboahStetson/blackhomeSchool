@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardHeader,
   Text,
-  Button,
+
 } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/react";
 import { TbBuildingBank } from "react-icons/tb";

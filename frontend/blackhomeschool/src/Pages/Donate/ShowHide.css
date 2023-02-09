@@ -1,21 +1,27 @@
-
-.boxyContainer{
-  padding: 15px;
-   
-   
+.boxTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
-.boxTitle{
-    display: flex;
-    justify-content: space-between;
-}
-.boxContent{
+.boxContent {
   background-color: white;
   width: 100%;
-  margin: 10px;
   height: 100%;
 }
-.title{
+.titless {
   font-size: 20px;
   cursor: pointer;
+}
+
+.showHide .boxTitle div {
+  display: flex;
+  align-items: center;
+  margin-left: 13%
+}
+
+.showHide .boxTitle .icon {
+  margin-left: auto;
+}
+.showHide {
+  margin-top: 30px;
 }

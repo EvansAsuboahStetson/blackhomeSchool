@@ -14,7 +14,7 @@ function JoinUs() {
           name="JOIN US"
         />
         <Services/>
-        {/* https://www.youtube.com/watch?v=sa9XtaKcSvo */}
+      
 
       </div>
 

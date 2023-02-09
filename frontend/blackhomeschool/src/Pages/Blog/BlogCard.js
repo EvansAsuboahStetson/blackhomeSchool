@@ -25,18 +25,18 @@ function BlogCard({ blog }) {
           borderRadius="m"
         />
         <Stack mt="6" spacing="3">
-          <Heading className="text-blog" color="green" size="md" margin={5}>
+          <Heading className="text-blog comment" color="green" size="md" margin={5}>
             {blog.title}{" "}
           </Heading>
-          <Text className="text-blog">
+          <Text className="text-blog comment">
             {blog.mainText.substring(0, 250)}...
           </Text>
         </Stack>
       </CardBody>
       <div className="arrange-footer">
         <div className="a text-blog">
-          <div className="b text-blog">Published On</div>
-          <div className="c text-blog">{blog.datePublished}</div>
+          <div className="b text-blog ">Published On</div>
+          <div className="c text-blog comment">{blog.datePublished}</div>
         </div>
       </div>
       <Divider />

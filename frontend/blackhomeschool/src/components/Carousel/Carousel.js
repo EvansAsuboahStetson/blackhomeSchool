@@ -5,9 +5,11 @@ import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 // And react-slick as our Carousel Lib
 import Slider from "react-slick";
-import bhcl from "../assets/bhcl.gif";
+
 import Main from "../VideoLoop/Main";
 import "./Carousel.css";
+import Together from "../../components/assets/Together.jpeg"
+
 
 // Settings for the slider
 const settings = {
@@ -41,7 +43,7 @@ export default function Carousel() {
 
   const carosel = [
     {
-      url: "https://images.pexels.com/photos/2406271/pexels-photo-2406271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      url: Together,
       display: "none",
     },
     {
@@ -122,7 +124,7 @@ export default function Carousel() {
               backgroundPosition="center"
               backgroundRepeat="no-repeat"
               backgroundSize="cover"
-              backgroundImage={`url(${url.url})`}
+              backgroundImage={url.url}
             >
               <Button
                 variant={"solid"}

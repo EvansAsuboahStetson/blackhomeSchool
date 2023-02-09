@@ -19,7 +19,7 @@ import {
   ListItem,
 } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
-import "./Blog.css"
+
 function SingleBlog() {
   const location = useLocation();
 
@@ -41,8 +41,7 @@ function SingleBlog() {
             src={data.imagesrc}
             fit={"cover"}
             align={"center"}
-            w={"100%"}
-            h={{ base: "100%", sm: "400px", lg: "500px" }}
+          
           />
         </Flex>
         <Stack  spacing={{ base: 6, md: 10 }}>
@@ -68,7 +67,7 @@ function SingleBlog() {
             }
           >
             <VStack spacing={{ base: 4, sm: 6 }}>
-              <Text  className="text-blog" fontSize={"lg"}>{data.mainText}</Text>
+              <Text  className="text-blog comment" fontSize={"lg"}>{data.mainText}</Text>
             </VStack>
             <Box>
               <Text

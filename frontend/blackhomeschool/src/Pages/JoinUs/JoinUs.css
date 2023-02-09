@@ -20,17 +20,41 @@
   }
 
   .list_items{
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+
     transition: all .3s ease-in-out;
     cursor: pointer;
+    text-decoration: none;
   }
 
   .list_items:hover {
    
     box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
     transform: translate3d(0px, -1px, 0px);
+    text-decoration: none;
 
   /* When the animation is finished, start again */
   
   }
+ 
+ .items-loaded{
 
+  text-align: left;
+  
+  overflow-wrap: break-word;
+ 
+  
+ }
+ .cards-spacing{
+  margin: 10px;
+ }
+ .text-loaded{
+  width: 100%;
+  margin:auto
+ }
+
+@media (max-width: 1024px) {
+  .arrange-image{
+    display: flex;
+    flex-direction: column;
+  }
+}

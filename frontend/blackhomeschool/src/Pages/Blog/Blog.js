@@ -9,7 +9,7 @@ import bhcl from "../../images/bhcl.jpeg";
 
 import reading from "../../images/reading.jpeg";
 import kids from "../../images/kids.jpeg";
-import "./Blog.css"
+import "./Blog.css";
 
 function Blog() {
   const blogs = [
@@ -43,7 +43,6 @@ function Blog() {
       category: "News",
       link: "",
     },
-    
   ];
   return (
     <div>
@@ -51,12 +50,8 @@ function Blog() {
         <Hero url={ballet} name={"BLOGS"} />
         <Services />
       </div>
-      <Heading  className="text-blog">LATEST BLOG POST</Heading>
-      <SimpleGrid
-        margin={10}
-        spacing={4}
-        templateColumns="repeat(auto-fill, minmax(350px, 2fr))"
-      >
+      <Heading className="text-blog">LATEST BLOG POST</Heading>
+      <SimpleGrid templateColumns="repeat(auto-fill, minmax(350px, 2fr))">
         {blogs.map((blog) => {
           return <BlogCard blog={blog}></BlogCard>;
         })}

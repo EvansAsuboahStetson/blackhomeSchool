@@ -2,4 +2,10 @@
 
 .text{
     font-family: 'Manrope', sans-serif;
+    
+}
+.comment_home{
+    text-align: left;
+    margin-bottom: 10px;
+ 
 }

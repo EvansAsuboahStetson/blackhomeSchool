@@ -12,14 +12,33 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import "./handsUp.css"
+import "./handsUp.css";
+import MissReg from "../../components/assets/miss_R.jpeg"
+import BatWoman from "../../components/assets/batman.jpeg"
+import Kids from "../../components/assets/sitting_kids.jpeg"
 
 export default function Commentary() {
   return (
     <Container maxW={"6xl"} py={12}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
-          <Text className="text" color={"black.500"} fontSize={"lg"}>
+        <Text
+            textTransform={"uppercase"}
+            color={"green.400"}
+            fontWeight={600}
+            marginBottom="30px"
+            fontSize={"sm"}
+            bg={useColorModeValue("blue.50", "blue.900")}
+            p={2}
+            alignSelf={"flex-start"}
+            rounded={"md"}
+            className="text"
+          >
+          <Heading className="heading">BLACKHOME SCHOOLERS OF CENTRAL FLORIDA</Heading>
+          </Text>
+
+
+          <Text className="text comment" color={"black.500"} fontSize={"lg"}>
             Black Homeschoolers of Central Florida, Inc. has been serving the
             Greater Central Florida homeschool community since 2009, providing
             support, classes, field trips and learning opportunities, along with
@@ -49,10 +68,8 @@ export default function Commentary() {
           <Image
             rounded={"md"}
             alt={"feature image"}
-            src={
-              "https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            }
-            objectFit={"cover"}
+            src={MissReg}            
+            objectFit={"contain"}
           />
         </Flex>
       </SimpleGrid>
@@ -60,7 +77,7 @@ export default function Commentary() {
 
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
-          <Text className="text" color={"black.500"} fontSize={"lg"}>
+          <Text className="text comment" color={"black.500"} fontSize={"lg"}>
             Not only does Black Homeschoolers of Central Florida, Inc. provide
             for the youth, but also their families. There are programs like the
             BHCFL Parent Book Club, Parent Workshops, BHCFL Family Retreat
@@ -86,20 +103,38 @@ export default function Commentary() {
           <Image
             rounded={"md"}
             alt={"feature image"}
-            src={
-              "https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            }
-            objectFit={"cover"}
+            src={BatWoman}
+            objectFit={"scale-down"}
           />
         </Flex>
       </SimpleGrid>
       <Divider mt={12} mb={12} />
-      <Heading className="heading">Participation Policy</Heading>
+
+      <Text
+            textTransform={"uppercase"}
+            color={"green.400"}
+            fontWeight={600}
+            marginBottom="30px"
+            fontSize={"sm"}
+            bg={useColorModeValue("blue.50", "blue.900")}
+            p={2}
+            alignSelf={"flex-start"}
+            rounded={"md"}
+            className="text"
+          >
+          <Heading className="heading">Participation Policy</Heading>
+          </Text>
+
+
+
+
+
+     
 
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
          
-          <Text className="text" color={"black.500"} fontSize={"lg"}>
+          <Text className="text comment" color={"black.500"} fontSize={"lg"}>
             In order to join and be a member of Black Homeschoolers of Central
             Florida, Inc., receive the eNewsletter, and participate in
             activities, a person must legally home school at least one child
@@ -133,10 +168,8 @@ export default function Commentary() {
           <Image
             rounded={"md"}
             alt={"feature image"}
-            src={
-              "https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            }
-            objectFit={"cover"}
+            src={Kids}
+            objectFit={"scale-down"}
           />
         </Flex>
       </SimpleGrid>

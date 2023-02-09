@@ -1,13 +1,6 @@
 import React from "react";
 
 import {
-  Box,
-  VStack,
-  Button,
-  Flex,
-  Text,
-  Divider,
-  chakra,
   Grid,
   GridItem,
   Container,
@@ -32,7 +25,7 @@ const ServicesFeature = ({ title, location, icon }) => {
         <FontAwesomeIcon icon={icon} className="handsUp" />
 
         <RouteLink to={`/${location}`}>
-          <Heading margin="20px" className="text">
+          <Heading margin="20px" className="text comment">
             {title}
           </Heading>
         </RouteLink>
@@ -63,14 +56,6 @@ function Services({
         }}
         gap={0}
       >
-        {/* <GridItem w="100%" h="80" bg="blue.500">
-          <Center h="100%" w="100%" color="white" className="center">
-            <FontAwesomeIcon icon={faHandsHolding} className="handsUp" />
-            <Heading margin="20px" className="text">
-             {number1}
-            </Heading>
-          </Center>
-        </GridItem> */}
         <ServicesFeature title={number1} location={location1} icon={icon1} />
         <ServicesFeature title={number2} location={location2} icon={icon2} />
         <ServicesFeature title={number3} location={location3} icon={icon3} />

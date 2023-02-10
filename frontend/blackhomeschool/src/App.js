@@ -14,6 +14,7 @@ import Blog from "./Pages/Blog/Blog";
 import SingleBlog from "./Pages/Blog/SingleBlog";
 import Donate from "./Pages/Donate/Donate";
 import SilentAuction from "./Pages/SilentAuction/SilentAuction";
+import VolunteerPage from "./Pages/Volunteer/VolunteerPage";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <Route path="/bhcl_blog" element={<SingleBlog />}></Route>
               <Route path="/donate" element={<Donate />}></Route>
               <Route path="/SilentAuction" element={<SilentAuction />}></Route>
+              <Route path="/volunteering" element={<VolunteerPage />}></Route>
               
             </Routes>
             <Footer />

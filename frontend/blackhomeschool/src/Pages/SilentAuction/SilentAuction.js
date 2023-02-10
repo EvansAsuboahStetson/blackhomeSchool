@@ -52,6 +52,7 @@ export default function SilentAuction() {
       logo: "https://www.hcc-offm.org/wp-content/uploads/2022/04/rollins.png",
     },
   ];
+  const title = "Silent Auction Partners"
   return (
     <div className="donates">
       <div>
@@ -60,7 +61,7 @@ export default function SilentAuction() {
       </div>
       <SilentPage />
       <div>
-        <Sponsors cardsSystem={cardsSystem} />
+        <Sponsors cardsSystem={cardsSystem} title={title} />
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ const settings = {
   slidesToScroll: 1,
 };
 
-const Sponsor = ({ cardsSystem }) => {
+const Sponsor = ({ cardsSystem ,title}) => {
   const [slider, setSlider] = useState(null);
 
   const top = useBreakpointValue({ base: "90%", md: "50%" });
@@ -87,7 +87,7 @@ const Sponsor = ({ cardsSystem }) => {
       </IconButton>
 
       <Heading>
-        <Text className="text marg">Silent Auction Partners</Text>
+        <Text className="text marg">{title}</Text>
       </Heading>
 
       <Slider {...settings} ref={(slider) => setSlider(slider)}>

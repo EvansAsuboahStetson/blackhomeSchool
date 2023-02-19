@@ -7,17 +7,17 @@
   margin: 60px;
 }
 .right-side {
-  background-color: #e6e6fa;
+  background-color: white;
 }
 .sholarship-page {
   width: 100%;
 }
 .info-stack {
-  background-color: #bfbfbf;
+  background-color: white;
 }
 .leftSide {
   display: flex;
-  background-color: #bfbfbf;
+  background-color: white;
 
   flex-direction: column;
   height: 100%;
@@ -28,7 +28,7 @@
 
 .impact-page {
   padding-top: 10px;
-  background-color: #bfbfbf;
+  background-color: white;
   padding-bottom: 10px;
 }
 .card-container {

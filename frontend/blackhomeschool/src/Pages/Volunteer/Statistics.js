@@ -92,19 +92,21 @@ export default function StatisticCircle({ person, hours }) {
         <StatsCard
           title={"Total Volunteer Hours"}
           stat={
-            <Waypoint onEnter={() => setStartCounter(true)}>
-              {startCounter ? (
-                <Counter start={0} end={hours} duration={3} delay={0.5} />
-              ) : (
-                0
-              )}
-            </Waypoint>
+            <div>
+              <Waypoint onEnter={() => setStartCounter(true)}>
+                {startCounter ? (
+                  <Counter start={0} end={hours} duration={3} delay={0.5} />
+                ) : (
+                  0
+                )}
+              </Waypoint>
+            </div>
           }
           icon={<TiWatch size={"3em"} />}
         />
         <StatsCard
-          title={"Total Volunteer Hours"}
-          stat={"1,000"}
+          title={"Amount Generated"}
+          stat={"$1,000"}
           icon={<TiWatch size={"3em"} />}
         />
       </SimpleGrid>

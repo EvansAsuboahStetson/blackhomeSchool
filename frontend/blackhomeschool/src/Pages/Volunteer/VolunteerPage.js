@@ -1,21 +1,24 @@
+import { Grid, GridItem, Text } from "@chakra-ui/react";
 
-import Services from "../AboutUs/Services";
 import Hero from "../AboutUs/Hero";
 
-import Rock from "../../components/assets/rocks.jpeg"
+import Rock from "../../components/assets/rocks.jpeg";
 import StatisticCircle from "./Statistics";
+import "./Statistic.css";
+import MidVolunteerPage from "./MidVolunteerPage";
 
 export default function VolunteerPage() {
   return (
     <div>
       <div>
-        <Hero url={Rock} name="VOLUNTEER WITH US" />
-        
+        <Hero url={Rock} name="GET INVOLVED" />
       </div>
-      <div>
-        <StatisticCircle person={50}  hours={1000}/>
+      <MidVolunteerPage/>
+
+        <div className="stats">
+          <StatisticCircle person={50} hours={1000} />
+        </div>
       </div>
-    
-    </div>
+   
   );
 }

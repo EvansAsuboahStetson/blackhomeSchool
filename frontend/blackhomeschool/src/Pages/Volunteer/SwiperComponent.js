@@ -76,8 +76,7 @@ export default function SwiperComponent() {
                     top="50%"
                     transform="translateY(-50%)"
                     onClick={handlePrevious}
-                    colorScheme="teal"
-                    variant="ghost"
+                 
                     size="lg"
                     ml="1rem"
                     visibility="hidden"
@@ -93,8 +92,8 @@ export default function SwiperComponent() {
                     top="50%"
                     transform="translateY(-50%)"
                     onClick={handleNext}
-                    colorScheme="teal"
-                    variant="ghost"
+                   
+                   
                     size="lg"
                     mr="1rem"
                     visibility="hidden"

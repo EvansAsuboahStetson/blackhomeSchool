@@ -3,10 +3,11 @@ import { Grid, GridItem, Text } from "@chakra-ui/react";
 import "./Statistic.css";
 import SwiperComponent from "./SwiperComponent";
 
+
 function MidVolunteerPage() {
   return (
     <div>
-      <div className="mid-page" style={{ marginTop: "20px" }}>
+      <div className="mid-page" style={{ marginTop: "20px" ,marginRight:"20px"}}>
         <Grid
           templateColumns={{
             base: "repeat(1, 1fr)",
@@ -26,7 +27,7 @@ function MidVolunteerPage() {
                 fontSize={{ base: "sm", md: "lg", lg: "xl" }}
                 letterSpacing="2px"
               >
-               <SwiperComponent/>
+                <SwiperComponent />
               </Text>
             </div>
           </GridItem>
@@ -50,8 +51,8 @@ function MidVolunteerPage() {
                     lineHeight: "28px",
                   }}
                 >
-                  WHY BLACKHOME{" "}
-                </span>{" "}
+                  WHY BLACK HOME{" "}
+                </span>
                 SCHOOLERS?
               </Text>
               <Text

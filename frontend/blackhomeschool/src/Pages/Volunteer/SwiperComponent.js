@@ -1,20 +1,28 @@
 import { useState } from "react";
-import { Box, Image, Text, Flex, Button } from "@chakra-ui/react";
+import { Box, Image, Text, Flex, Button ,chakra} from "@chakra-ui/react";
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
-
+import Lawrencia from "../../components/assets/Lawrencia.jpg"
+import Simon from "../../components/assets/Simons.jpg"
+import Evans from "../../components/assets/Evans.JPG"
 const images = [
     {
-        src: "https://www.thewowstyle.com/wp-content/uploads/2015/01/nature-images..jpg",
-        alt: "Image 1",
+        src: Lawrencia,
+        alt: "Teaching kids has always been a passion of mine. When I was young I was home schooled so having this opportunity to teach kids is amazing",
+        name:"Lawrencia Agbovi",
+        role:"Stetson Bonner Program"
     },
     {
-        src: "https://wallpapercave.com/wp/wp2599594.jpg",
-        alt: "Image 2",
+        src:Simon,
+        alt: "I love volunteering for black home school. It makes my heart smile when I see the improvement of kids academically and their personal growh",
+        name:"Simon Doku",
+        role:"UCF Program"
     },
     {
-        src: "https://www.pixelstalk.net/wp-content/uploads/2016/06/Jungle-HD-Images.jpg",
-        alt: "Image 3",
+        src: Evans,
+        alt: "It is So fun to work with the kids",
+        name:"Evans Asuboah",
+        role:"Stetson Bonner Program"
     },
 ];
 
@@ -37,9 +45,9 @@ export default function SwiperComponent() {
         <Flex flexDirection="column" alignItems="center" justifyContent="center">
             <Box
                 w="100%"
-                h="400px"
+                h={["500px", null, null, "600px"]}
                 position="relative"
-                _hover={{ opacity: "0.8" }}
+                _hover={{ opacity: "0.9" }}
                 onMouseEnter={() => {
                     document.querySelector("#prev-button").style.visibility = "visible";
                     document.querySelector("#next-button").style.visibility = "visible";
@@ -67,7 +75,33 @@ export default function SwiperComponent() {
                     opacity="0.8"
                     textAlign="center"
                 >
-                    {images[activeIndex].alt}
+                    <Flex
+        direction={'column'}
+        textAlign={'left'}
+        justifyContent={'space-between'}>
+        <chakra.p
+          fontFamily={'Inter'}
+          fontWeight={'medium'}
+          fontSize={'15px'}
+          pb={4}
+          className="text">
+
+           {images[activeIndex].alt}
+        </chakra.p>
+        <chakra.p fontFamily={'Work Sans'} fontWeight={'bold'} fontSize={14}>
+            {images[activeIndex].name}
+  
+          <chakra.span
+          className="text"
+            fontFamily={'Inter'}
+            fontWeight={'medium'}
+            color={'white.500'}>
+            {' '}
+            - {images[activeIndex].role}
+          </chakra.span>
+        </chakra.p>
+      </Flex>
+                  
                 </Text>
                 <Button
                     id="prev-button"
